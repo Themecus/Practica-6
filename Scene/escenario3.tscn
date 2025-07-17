@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://bcr1bhsh7dyv0"]
+
+[ext_resource type="PackedScene" uid="uid://5fhjmo4p5kke" path="res://Scene/player.tscn" id="1_1rrif"]
+[ext_resource type="PackedScene" uid="uid://h5f8k3ait5lp" path="res://Scene/puerta_2.tscn" id="1_dok18"]
+[ext_resource type="PackedScene" uid="uid://b4ap5bofqm2q8" path="res://Scene/punto.tscn" id="1_wmd6j"]
+[ext_resource type="PackedScene" uid="uid://b1gvceqrse83x" path="res://Scene/puerta_4.tscn" id="3_6cjwj"]
+[ext_resource type="PackedScene" uid="uid://cxkfs56v6b5x3" path="res://Scene/puerta_1.tscn" id="3_7xyqy"]
+[ext_resource type="PackedScene" uid="uid://bsvliud6se28a" path="res://Scene/pared.tscn" id="5_dtm6y"]
+
+[node name="Escenario" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-2, -81)
+rotation = 3.14159
+scale = Vector2(2041.68, 73.8317)
+offset = Vector2(0, -40)
+zoom = Vector2(2, 2)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -288.0
+offset_top = -281.0
+offset_right = 285.0
+offset_bottom = 40.0
+color = Color(0.952941, 0, 0.478431, 0.980392)
+
+[node name="Zona de puntos" type="Node2D" parent="."]
+
+[node name="Punto3" parent="Zona de puntos" instance=ExtResource("1_wmd6j")]
+position = Vector2(109, -171)
+
+[node name="Label" type="Label" parent="Zona de puntos"]
+offset_left = 67.0
+offset_top = -215.0
+offset_right = 151.0
+offset_bottom = -192.0
+text = "Ponte aqui"
+
+[node name="Puertas" type="Node2D" parent="."]
+
+[node name="puerta2" parent="Puertas" instance=ExtResource("1_dok18")]
+position = Vector2(-273, -110)
+
+[node name="puerta4" parent="Puertas" instance=ExtResource("3_6cjwj")]
+position = Vector2(0, -265)
+
+[node name="puerta1" parent="Puertas" instance=ExtResource("3_7xyqy")]
+position = Vector2(266, -83)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -91.0
+offset_top = -171.0
+offset_right = -39.0
+offset_bottom = -148.0
+text = "Zona 3"
+
+[node name="Player" parent="." instance=ExtResource("1_1rrif")]
+position = Vector2(-3, -44)
+
+[node name="Paredes" type="Node2D" parent="."]
+
+[node name="Pared" parent="Paredes" instance=ExtResource("5_dtm6y")]
+position = Vector2(-298, -220)
+scale = Vector2(1, 3.96)
+
+[node name="Pared2" parent="Paredes" instance=ExtResource("5_dtm6y")]
+position = Vector2(297, -48)
+scale = Vector2(1.22204, 6.44961)
+
+[node name="Pared3" parent="Paredes" instance=ExtResource("5_dtm6y")]
+position = Vector2(0, -291)
+rotation = -1.57099
+scale = Vector2(1, 6.07998)
+
+[node name="Pared4" parent="Paredes" instance=ExtResource("5_dtm6y")]
+position = Vector2(1, 50)
+rotation = -1.57099
+scale = Vector2(1, 6.07998)

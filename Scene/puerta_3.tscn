@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://da0whcb4xwk60"]
+
+[ext_resource type="Script" path="res://Scripts/puerta_3.gd" id="1_by22p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bedxc"]
+size = Vector2(96.25, 89)
+
+[node name="puerta3" type="Area2D"]
+scale = Vector2(0.332387, 0.3472)
+script = ExtResource("1_by22p")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -45.0
+offset_top = -44.0
+offset_right = 52.0
+offset_bottom = 45.0
+color = Color(0.952941, 0, 0.478431, 0.980392)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.125, 0.5)
+shape = SubResource("RectangleShape2D_bedxc")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
